@@ -24,8 +24,7 @@ public class ArrowsMove : MonoBehaviour {
     void Update () {
         gameTime -= Time.deltaTime;
 
-        if (gameTime < 0)
-        {
+        if (gameTime < 0) {
             Main.status = "lose-mg";
             SceneManager.LoadScene("Transition");
         }
