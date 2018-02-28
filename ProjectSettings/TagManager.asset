@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: foreground
+    uniqueID: 1452903153
+    locked: 0
+  - name: table
+    uniqueID: 3207648991
+    locked: 0
+  - name: arrow
+    uniqueID: 367140569
+    locked: 0
