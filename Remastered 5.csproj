@@ -219,12 +219,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scenes\Build\Scripts\Bobot.cs" />
+    <Compile Include="Assets\Scenes\Build\Scripts\TextEnlarger.cs" />
+    <Compile Include="Assets\Scenes\Climb\Script\Climbing.cs" />
+    <Compile Include="Assets\Scenes\Main\Scripts\Main.cs" />
     <Compile Include="Assets\Scenes\Protect\Scripts\ArrowsMove.cs" />
     <Compile Include="Assets\Scenes\Protect\Scripts\GlassesMovement.cs" />
+    <Compile Include="Assets\Scenes\Remove Food\Scripts\CursorMovement.cs" />
+    <Compile Include="Assets\Scenes\Remove Food\Scripts\Triggered.cs" />
+    <Compile Include="Assets\Scenes\Scout\CameraMove.cs" />
     <Compile Include="Assets\Scenes\Screw\Scripts\ArrowScript.cs" />
     <Compile Include="Assets\Scenes\Screw\Scripts\RotatingScript.cs" />
     <Compile Include="Assets\Scenes\Screw\Scripts\ScrewScript.cs" />
-    <Compile Include="Assets\Scenes\TitleMenu\Scripts\Main.cs" />
     <Compile Include="Assets\Scenes\Transition\TransitionScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -21,7 +21,9 @@ public class TransitionScript : MonoBehaviour {
         if (Main.status == "from-menu")
         {
             Main.status = "from-transition";
-            nextScene = (Main.games[Random.Range(0, Main.games.Length)]);
+            int newGame = Random.Range(0, Main.games.Length);
+            nextScene = (Main.games[newGame]);
+            //Main.games
             // delete selected game
             blowup.text = nextScene;
         }
@@ -29,10 +31,10 @@ public class TransitionScript : MonoBehaviour {
         {
             Main.gamesWon++;
 
-            if (Main.gamesWon == 3)
+            if (Main.gamesWon == 1)
             {
                 blowup.text = "BOSS LVL";
-                // they are ready for boss / final
+                nextScene = "Build";
             }
             else
             {

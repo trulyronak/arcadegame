@@ -15,6 +15,8 @@ public class ArrowsMove : MonoBehaviour {
     private float targetTime;
 
     private float gameTime = 10.0f;
+
+    bool left, right, _left, _right = false;
 	// Use this for initialization
 	void Start () {
         targetTime = timer;
@@ -28,20 +30,34 @@ public class ArrowsMove : MonoBehaviour {
             Main.status = "lose-mg";
             SceneManager.LoadScene("Transition");
         }
-        if (transform.position.x == randPost[GlassesMovement.randNum] && Input.GetKeyDown("space")) {
+        if (transform.position.x == randPost[GlassesMovement.randNum] && (Input.GetKeyDown("space") || Input.GetButtonDown("Fire1"))) {
             print("Game Over");
             // game won yay
             Main.status = "win-mg";
             SceneManager.LoadScene("Transition");
         }
-        if (Input.GetKeyDown("left")) {
+        if (!_left) {
+            left = Input.GetAxis("Horizontal") < 0;
+        }
+        _left = Input.GetAxis("Horizontal") < 0;
+        //left = Input.GetKeyDown("left") || Input.GetAxis("Horizontal") < 0;
+        if (!_right) {
+            right = Input.GetAxis("Horizontal") > 0;
+        }
+        _right = Input.GetAxis("Horizontal") > 0;
+        //right = Input.GetKeyDown("right") || Input.GetAxis("Horizontal") > 0;
+
+        if (left) {
             moveLeft();
         }
-        if (Input.GetKeyDown("right")) {
+        if (right) {
             moveRight();
         }
+        left = false;
+        right = false;
+        /*
         if (Input.GetKey("left") || Input.GetKey("right")) {
-            if (Input.GetKeyDown("left") || Input.GetKeyDown("right")) {
+            if (left || right) {
                 time = Time.time;
             }
             timePressed = Time.time - time;
@@ -57,8 +73,9 @@ public class ArrowsMove : MonoBehaviour {
                     moveRight();
                 }
             }
-        }
+        }*/
 	}
+    
     void moveRight() {
         if (transform.position.x == 7) {
             transform.Translate(-16, 0, 0);

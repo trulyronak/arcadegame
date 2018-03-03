@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 1306be0a73d723e4bb156e31e031faf8
+timeCreated: 1520034546
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: WarioWare Inc.
+  fontNames:
+  - WarioWare Inc.
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 4cac42fd791cbf84b8cd741cd5a48af6, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
