@@ -227,7 +227,7 @@
     <Compile Include="Assets\Scenes\Protect\Scripts\GlassesMovement.cs" />
     <Compile Include="Assets\Scenes\Remove Food\Scripts\CursorMovement.cs" />
     <Compile Include="Assets\Scenes\Remove Food\Scripts\Triggered.cs" />
-    <Compile Include="Assets\Scenes\Scout\CameraMove.cs" />
+    <Compile Include="Assets\Scenes\Scout\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scenes\Screw\Scripts\ArrowScript.cs" />
     <Compile Include="Assets\Scenes\Screw\Scripts\RotatingScript.cs" />
     <Compile Include="Assets\Scenes\Screw\Scripts\ScrewScript.cs" />

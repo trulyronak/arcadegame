@@ -8,13 +8,14 @@ public class ArrowsMove : MonoBehaviour {
     public float secondsPressed;
     public float timer;
  
-    private List<int> randPost = new List<int>(new int[] { -9, -5, -1, 3, 7 });
+    private List<int> randPost = new List<int>(new int[] {-5, -1, 3}); //    private List<int> randPost = new List<int>(new int[] { -9, -5, -1, 3, 7 });
+
 
     private float timePressed;
     private float time;
     private float targetTime;
 
-    private float gameTime = 10.0f;
+    private float gameTime = 6.0f;
 
     bool left, right, _left, _right = false;
 	// Use this for initialization
@@ -30,21 +31,23 @@ public class ArrowsMove : MonoBehaviour {
             Main.status = "lose-mg";
             SceneManager.LoadScene("Transition");
         }
-        if (transform.position.x == randPost[GlassesMovement.randNum] && (Input.GetKeyDown("space") || Input.GetButtonDown("Fire1"))) {
-            print("Game Over");
-            // game won yay
-            Main.status = "win-mg";
+        if (Input.GetKeyDown("space") || Input.GetButtonDown("Fire1")) {
+            if (transform.position.x == randPost[GlassesMovement.randNum]) {
+                Main.status = "win-mg";
+            } else {
+                Main.status = "lose-mg";
+            }
             SceneManager.LoadScene("Transition");
         }
         if (!_left) {
-            left = Input.GetAxis("Horizontal") < 0;
+            left = -Input.GetAxis("Horizontal") < 0;
         }
-        _left = Input.GetAxis("Horizontal") < 0;
+        _left = -Input.GetAxis("Horizontal") < 0;
         //left = Input.GetKeyDown("left") || Input.GetAxis("Horizontal") < 0;
         if (!_right) {
-            right = Input.GetAxis("Horizontal") > 0;
+            right = -Input.GetAxis("Horizontal") > 0;
         }
-        _right = Input.GetAxis("Horizontal") > 0;
+        _right = -Input.GetAxis("Horizontal") > 0;
         //right = Input.GetKeyDown("right") || Input.GetAxis("Horizontal") > 0;
 
         if (left) {
@@ -77,16 +80,16 @@ public class ArrowsMove : MonoBehaviour {
 	}
     
     void moveRight() {
-        if (transform.position.x == 7) {
-            transform.Translate(-16, 0, 0);
+        if (transform.position.x == 3) {
+            transform.Translate(-8, 0, 0);
         }
         else {
             transform.Translate(4, 0, 0);
         }
     }
     void moveLeft() {
-        if (transform.position.x == -9) {
-            transform.Translate(16, 0, 0);
+        if (transform.position.x == -5) {
+            transform.Translate(8, 0, 0);
         }
         else {
             transform.Translate(-4, 0, 0);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TextEnlarger : MonoBehaviour
@@ -11,6 +12,8 @@ public class TextEnlarger : MonoBehaviour
     int size = 0;
     int startime, score = 0;
     bool finished = false;
+    float endGameTime = 5.0f;
+    static int lastEndTime;
     void Start()
     {
         g = GetComponent<Text>();
@@ -22,6 +25,24 @@ public class TextEnlarger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (finished)
+        {
+            endGameTime -= Time.deltaTime;
+        }
+        if (endGameTime < 0)
+        {
+            if (b.finishedBuild)
+            {
+                Main.status = ("win-boss");
+            }
+            else
+            {
+                Main.status = ("lose-boss");
+            }
+            Main.status = "done";
+            // report high score
+            SceneManager.LoadScene("Main");
+        }
         if (!finished && g.fontSize < 100)
             g.fontSize++;
         else
@@ -34,10 +55,12 @@ public class TextEnlarger : MonoBehaviour
                 finished = true;
                 b.enabled = false;
                 g.fontSize = 80;
-                g.text = "Dozer is finally happy :) ... Score: " + score.ToString();
+                //int finalscore = 
+                g.text = "Dozer is finally happy :) ... Score: " + (score+20).ToString();
                 Dance();
+                
             }
-            else if(gametime > 20)
+            else if(gametime > 420)
             {
                 finished = true;
                 b.enabled = false;
@@ -46,9 +69,9 @@ public class TextEnlarger : MonoBehaviour
             }
             else
             {
-                score = 150 - (int)Time.time;
+                score = 150 - ((int)Time.time - lastEndTime);
             }
-            print(score.ToString());
+            //print(score.ToString());
             /*if (gametime > 10)
             {
                 b.enabled = false;
@@ -69,16 +92,21 @@ public class TextEnlarger : MonoBehaviour
 
     void Dance()
     {
-        print("in dance()");
+        //print("in dance()");
         //while (!Input.anyKeyDown)
         //{
-            print("in while loop");
+            //print("in while loop");
             //for (int i = 0; i < 360; i++)
             //{
-                print("in for loop");
+                //print("in for loop");
                 b.transform.Rotate(0, size, 0);
         size++;
             //}
         //}
+    }
+
+    public static void resetTime()
+    {
+        lastEndTime = (int)Time.time;
     }
 }

@@ -21,11 +21,12 @@ public class Bobot : MonoBehaviour {
     public bool finishedBuild = false;
 
     private bool right, left, up, down = false;
+    private double x, y = 0;
     void Start () {
         GameObject chassis = sprites[0];
         foreach (GameObject g in sprites){
             Random r = new Random();
-            g.transform.Translate(Random.Range(-50f,50f),Random.Range(0f,25f),0);
+            g.transform.Translate(Random.Range(-25f,25f),Random.Range(0f,20f),0);
         }
         //chassis.transform.Translate(-10, 0, 0.2596754f);
 	}
@@ -34,20 +35,23 @@ public class Bobot : MonoBehaviour {
 	void Update () {
         if (selected < 5)
         {
-            right = Input.GetKey("right") || Input.GetAxis("Horizontal") > 0;
-            left = Input.GetKey("left") || Input.GetAxis("Horizontal") < 0;
+            x = sprites[selected].transform.position.x;
+            y = sprites[selected].transform.position.y;
+
+            right = Input.GetKey("right") || -Input.GetAxis("Horizontal") > 0;
+            left = Input.GetKey("left") || -Input.GetAxis("Horizontal") < 0;
             up = Input.GetKey("up") || Input.GetAxis("Vertical") > 0;
             down = Input.GetKey("down") || Input.GetAxis("Vertical") < 0;
-            if (right)
+            if (right && x < 30)
                 sprites[selected].transform.Translate(weight, 0, 0);
-            if (left)
+            if (left && x > -30)
                 sprites[selected].transform.Translate(-weight, 0, 0);
-            if (up)
+            if (up && y < 20)
                 sprites[selected].transform.Translate(0, weight, 0);
-            if (down)
+            if (down && y > -20)
                 sprites[selected].transform.Translate(0, -weight, 0);
 
-            //print(sprites[selected].transform.position);
+            Debug.Log(sprites[selected].transform.position.x+" "+ sprites[selected].transform.position.y);
 
             if (Input.GetKey("q") || Input.GetButtonDown("Fire1"))
             {
@@ -88,6 +92,11 @@ public class Bobot : MonoBehaviour {
             sprites[selected].transform.Translate(xtrans, ytrans, 0);
             return true;
         }
+        return false;
+    }
+
+    bool OutOfBounds()
+    {
         return false;
     }
 }
