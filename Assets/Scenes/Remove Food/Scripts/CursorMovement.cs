@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CursorMovement : MonoBehaviour {
 
-	// Use this for initialization
+    public GameObject bonelessPizza;
 	void Start () {
-		
+        bonelessPizza.tag = "quad";
+        bonelessPizza.transform.Translate(Random.Range(-5f, 5f), Random.Range(-4f, 4f), 0);
 	}
 	
 	// Update is called once per frame
