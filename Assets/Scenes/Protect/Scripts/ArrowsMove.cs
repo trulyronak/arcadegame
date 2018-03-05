@@ -40,15 +40,15 @@ public class ArrowsMove : MonoBehaviour {
             SceneManager.LoadScene("Transition");
         }
         if (!_left) {
-            left = -Input.GetAxis("Horizontal") < 0;
+            left = Main.GetAxis("Horizontal") < 0;
         }
-        _left = -Input.GetAxis("Horizontal") < 0;
-        //left = Input.GetKeyDown("left") || Input.GetAxis("Horizontal") < 0;
+        _left = Main.GetAxis("Horizontal") < 0;
+        //left = Input.GetKeyDown("left") || Main.GetAxis("Horizontal") < 0;
         if (!_right) {
-            right = -Input.GetAxis("Horizontal") > 0;
+            right = Main.GetAxis("Horizontal") > 0;
         }
-        _right = -Input.GetAxis("Horizontal") > 0;
-        //right = Input.GetKeyDown("right") || Input.GetAxis("Horizontal") > 0;
+        _right = Main.GetAxis("Horizontal") > 0;
+        //right = Input.GetKeyDown("right") || Main.GetAxis("Horizontal") > 0;
 
         if (left) {
             moveLeft();

@@ -24,10 +24,10 @@ public class ScrewScript : MonoBehaviour {
     }
         // Update is called once per frame
     void Update() {
-        left = -Input.GetAxis("Horizontal") < 0;
-        up = Input.GetAxis("Vertical") > 0;
-        right = -Input.GetAxis("Horizontal") > 0;
-        down = Input.GetAxis("Vertical") < 0;
+        left = Main.GetAxis("Horizontal") < 0;
+        up = Main.GetAxis("Vertical") > 0;
+        right = Main.GetAxis("Horizontal") > 0;
+        down = Main.GetAxis("Vertical") < 0;
         gameTime -= Time.deltaTime;
         if (gameTime < 0) {
             Main.status = "lose-mg";

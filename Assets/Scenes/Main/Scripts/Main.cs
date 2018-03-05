@@ -39,4 +39,19 @@ public class Main : MonoBehaviour
         // finally, let's decrement Array's size by one
         System.Array.Resize(ref arr, arr.Length - 1);
     }
+
+    public static float GetAxis(string axisName) {
+        if (axisName == "Horizontal") {        
+            bool arcadeVersion = false; // change accordingly
+            if (arcadeVersion) {
+                return -Input.GetAxis(axisName);
+            }
+            else {
+                return Input.GetAxis(axisName);
+            }
+        }
+        else {
+            return Input.GetAxis(axisName);
+        }
+    }
 }

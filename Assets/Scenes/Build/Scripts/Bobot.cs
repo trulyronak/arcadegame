@@ -38,10 +38,10 @@ public class Bobot : MonoBehaviour {
             x = sprites[selected].transform.position.x;
             y = sprites[selected].transform.position.y;
 
-            right = Input.GetKey("right") || -Input.GetAxis("Horizontal") > 0;
-            left = Input.GetKey("left") || -Input.GetAxis("Horizontal") < 0;
-            up = Input.GetKey("up") || Input.GetAxis("Vertical") > 0;
-            down = Input.GetKey("down") || Input.GetAxis("Vertical") < 0;
+            right = Input.GetKey("right") || Main.GetAxis("Horizontal") > 0;
+            left = Input.GetKey("left") || Main.GetAxis("Horizontal") < 0;
+            up = Input.GetKey("up") || Main.GetAxis("Vertical") > 0;
+            down = Input.GetKey("down") || Main.GetAxis("Vertical") < 0;
             if (right && x < 30)
                 sprites[selected].transform.Translate(weight, 0, 0);
             if (left && x > -30)

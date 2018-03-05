@@ -23,7 +23,7 @@ public class Climbing : MonoBehaviour {
             SceneManager.LoadScene("Transition");
         }
 
-        up = Input.GetKey("up") || Input.GetAxis("Vertical") > 0;
+        up = Input.GetKey("up") || Main.GetAxis("Vertical") > 0;
 
         if (up && (Input.GetKeyUp("space") || Input.GetButtonDown("Fire1"))) {
             points += 1;

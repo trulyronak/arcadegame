@@ -32,7 +32,7 @@ public class CameraMove : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (timer > 0) {
-            transform.Translate(0.2f * -Input.GetAxis("Horizontal"), 0, 0);
+            transform.Translate(0.2f * Main.GetAxis("Horizontal"), 0, 0);
 
             if (transform.position.x < 161.5f) {
                 transform.Translate(202.7f - 161.5f, 0, 0);

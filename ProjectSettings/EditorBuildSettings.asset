@@ -7,37 +7,17 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Main/Main.unity
-    guid: 3ccb83c98403c60409d5a808df1d2b30
-  - enabled: 1
-    path: Assets/Scenes/Transition/Transition.unity
-    guid: 3c2906657b71e164e9fbd4f25c9a2cd8
-  - enabled: 1
-    path: Assets/Scenes/Protect/Protect.unity
-    guid: ef375d6f4d2add341b3e6edf86b1b9f2
-  - enabled: 1
-    path: Assets/Scenes/Screw/Screw.unity
-    guid: 88df379c7d29b1546b57992975be1d73
-  - enabled: 1
-    path: Assets/Scenes/Climb/Sprites/Lose Transition/Lose.unity
-    guid: 2bbc92fef5107e942abd233db57beed0
   - enabled: 1
     path: Assets/Scenes/Build/Build.unity
-    guid: 40b19da42fb4b1c4f993e75220cf10f8
-  - enabled: 1
-    path: Assets/Scenes/Remove Food/Remove-Food.unity
-    guid: 45234fdeb43504f4a8ce732aff43fb77
-  - enabled: 1
-    path: Assets/Scenes/Remove Food/Remove-Food.unity
-    guid: 45234fdeb43504f4a8ce732aff43fb77
-  - enabled: 1
-    path: Assets/Scenes/Remove Food/Remove-Food.unity
-    guid: 45234fdeb43504f4a8ce732aff43fb77
-  - enabled: 1
-    path: Assets/Scenes/Remove Food/Remove-Food.unity
-    guid: 45234fdeb43504f4a8ce732aff43fb77
-  - enabled: 1
-    path: Assets/Scenes/Scout/Scout.unity
-    guid: 93c7631e8cf0ee64f91303fb3fd0ca67
   - enabled: 1
     path: Assets/Scenes/Climb/Climb.unity
-    guid: 1083ae3c2442712439234a6260f0278f
+  - enabled: 1
+    path: Assets/Scenes/Protect/Protect.unity
+  - enabled: 1
+    path: Assets/Scenes/Remove Food/Remove-Food.unity
+  - enabled: 1
+    path: Assets/Scenes/Scout/Scout.unity
+  - enabled: 1
+    path: Assets/Scenes/Screw/Tighten.unity
+  - enabled: 1
+    path: Assets/Scenes/Transition/Transition.unity
