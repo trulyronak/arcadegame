@@ -25,7 +25,6 @@ public class Bobot : MonoBehaviour {
     void Start () {
         GameObject chassis = sprites[0];
         foreach (GameObject g in sprites){
-            Random r = new Random();
             g.transform.Translate(Random.Range(-25f,25f),Random.Range(0f,20f),0);
         }
         //chassis.transform.Translate(-10, 0, 0.2596754f);
@@ -42,9 +41,9 @@ public class Bobot : MonoBehaviour {
             left = Input.GetKey("left") || Main.GetAxis("Horizontal") < 0;
             up = Input.GetKey("up") || Main.GetAxis("Vertical") > 0;
             down = Input.GetKey("down") || Main.GetAxis("Vertical") < 0;
-            if (right && x < 30)
+            if (right && ((selected != 0 && x < 30) || x < 25))
                 sprites[selected].transform.Translate(weight, 0, 0);
-            if (left && x > -30)
+            if (left && ((selected != 0 && x > -30) || x > -25))
                 sprites[selected].transform.Translate(-weight, 0, 0);
             if (up && y < 20)
                 sprites[selected].transform.Translate(0, weight, 0);
@@ -53,7 +52,7 @@ public class Bobot : MonoBehaviour {
 
             Debug.Log(sprites[selected].transform.position.x+" "+ sprites[selected].transform.position.y);
 
-            if (Input.GetKey("q") || Input.GetButtonDown("Fire1"))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
             {
                 ypos = sprites[selected].transform.position.y;
                 xpos = sprites[selected].transform.position.x;
