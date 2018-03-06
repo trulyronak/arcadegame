@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scenes\Build\Scripts\Bobot.cs" />
      <Compile Include="Assets\Scenes\Build\Scripts\TextEnlarger.cs" />
      <Compile Include="Assets\Scenes\Climb\Script\Climbing.cs" />
+     <Compile Include="Assets\Scenes\Credits\CreditsScript.cs" />
      <Compile Include="Assets\Scenes\Main\Scripts\Main.cs" />
      <Compile Include="Assets\Scenes\Protect\Scripts\ArrowsMove.cs" />
      <Compile Include="Assets\Scenes\Protect\Scripts\GlassesMovement.cs" />

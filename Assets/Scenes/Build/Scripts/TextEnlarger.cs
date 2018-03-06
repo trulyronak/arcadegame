@@ -41,7 +41,8 @@ public class TextEnlarger : MonoBehaviour
             }
             Main.status = "done";
             // report high score
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("Credits");
+            // SceneManager.LoadScene("Main");
         }
         if (!finished && g.fontSize < 100)
             g.fontSize++;
