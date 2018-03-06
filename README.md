@@ -1,9 +1,35 @@
 
 # Arcade Game
 
-NOTE: Before ever doing work on the game, make sure [to get changes from the base](#Getting)
+@Devs: NOTE: Before ever doing work on the game, make sure [to get changes from the base](#getting-changes) 
 
-**Getting the Game for Development Use**
+Table of Contents
+-----------------
+1. [Releases](#releases)
+2. [Contributors](#contributors)
+3. [Developing the Game](#developing-the-game)
+ 1. [Getting the Game](#getting-the-game-for-development-use)
+ 2. [Adding a Game](#adding-a-game)
+ 3. [Getting Changes](#getting-changes)
+
+Releases
+========
+
+Download the latest version from the [releases](https://github.com/ronakdev/arcadegame/releases) page, or play it [online](https://ronakshah.net/arcadegame/)
+
+Contributors
+============
+<span id="contributors"></span>
+
+
+![Credits Image](Assets/Scenes/Credits/CREDITS.png)
+
+
+Developing the Game
+===================
+
+Getting the Game for Development Use
+-------------
 
 1.  [Fork the Repo](https://www.google.com/url?q=https://github.com/ronakdev/arcadegame/fork&sa=D&ust=1519791593216000&usg=AFQjCNEL5EqWTgD3hLTBXWV8lGy5OP-yMQ)
 2.  Open Git Bash / Terminal
@@ -16,6 +42,7 @@ NOTE: Before ever doing work on the game, make sure [to get changes from the bas
 6.  Done!
 
 Adding a Game
+-------------
 
 1.  Import unity package
 2.  Make a folder in `Scenes/<GameName>`
@@ -56,7 +83,7 @@ For lose
  1.  Submit a Pull Request
 
 Getting Changes
-
+---------------
 1.  `git pull upstream master`
 
 1.  If you never setup `upstream` paste in the below code after cding into the appropriate directory
