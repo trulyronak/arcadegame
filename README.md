@@ -1,6 +1,7 @@
 
 # Arcade Game
 
+
 @Devs: NOTE: Before ever doing work on the game, make sure [to get changes from the base](#getting-changes) 
 
 Table of Contents
