@@ -42,7 +42,7 @@ public class Main : MonoBehaviour
 
     public static float GetAxis(string axisName) {
         if (axisName == "Horizontal") {        
-            bool arcadeVersion = false; // change accordingly
+            bool arcadeVersion = true; // change accordingly
             if (arcadeVersion) {
                 return -Input.GetAxis(axisName);
             }
