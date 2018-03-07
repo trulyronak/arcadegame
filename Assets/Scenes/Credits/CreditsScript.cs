@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 	
 	
 public class CreditsScript : MonoBehaviour {
-	private float creditTime = 7.0f;
+	private float creditTime = 22.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +16,9 @@ public class CreditsScript : MonoBehaviour {
 		creditTime -= Time.deltaTime;	
 		print("Time: " + creditTime);
 		if (creditTime < 0) {
+			SceneManager.LoadScene("Main");
+		}
+		if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1")) {
 			SceneManager.LoadScene("Main");
 		}
 	}

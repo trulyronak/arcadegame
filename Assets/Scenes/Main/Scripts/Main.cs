@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-
+using UnityEditor;
 public class Main : MonoBehaviour
 {
     public static string status;
     public static List<string> games = new List<string>();
     public static int gamesWon;
-
+    public static bool arcadeCabinetMode = false;
     private void Start()
     {
         gamesWon = 0;
@@ -21,6 +21,12 @@ public class Main : MonoBehaviour
     }
     void Update()
         {
+            if (Input.GetKeyDown(KeyCode.B)) {
+                Main.arcadeCabinetMode = !Main.arcadeCabinetMode;
+                string text = "Arcade Cabinet Mode is " + ((Main.arcadeCabinetMode ? "activated" : "deactivated"));
+                EditorUtility.DisplayDialog(text,"If you don't know what this means, deactivate it", "OK");
+
+            }
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire2"))
             {
                 Debug.Log("at the menu");
@@ -42,8 +48,7 @@ public class Main : MonoBehaviour
 
     public static float GetAxis(string axisName) {
         if (axisName == "Horizontal") {        
-            bool arcadeVersion = true; // change accordingly
-            if (arcadeVersion) {
+            if (arcadeCabinetMode) {
                 return -Input.GetAxis(axisName);
             }
             else {
