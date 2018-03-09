@@ -8,11 +8,11 @@ public class Main : MonoBehaviour
     public static List<string> games = new List<string>();
     public static int gamesWon;
     public static bool arcadeCabinetMode = false;
-    public static float score = 0.00f;
+    public static int score = 0;
 
     private void Start()
     {
-        score = 0.00f; // reset the score
+        score = 0; // reset the score
         gamesWon = 0;
         status = "menu";
         games.Add("Protect");
@@ -64,6 +64,15 @@ public class Main : MonoBehaviour
     }
 
     public static void addScore(float timeUsed, float timeAllotted) {
-        Main.score += ((timeAllotted - timeUsed) / timeAllotted) * 10.0f;
+        Main.score += (int) (((timeAllotted - timeUsed) / timeAllotted) * 10.0f);
+    }
+
+    public static void reportScore() {
+        if (PlayerPrefs.HasKey("highscores")) {
+            string hs = PlayerPrefs.GetString("higscores");
+            // magic hs => List
+            int[] highscores;
+            highscores.add somehow (Main.score);
+        }
     }
 }

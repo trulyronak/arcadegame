@@ -60,8 +60,10 @@ public class TextEnlarger : MonoBehaviour
                 g.fontSize = 80;
                 //int finalscore = 
                 if (!scoreSet) {
-                    Main.score += ((150 - ((int)Time.time - lastEndTime)) / 160.0f) * 50.0f;
+                    Main.score += (int) (Mathf.Log((150 - ((int)Time.time - lastEndTime))) * 1000.0f);
                     Main.score += 20; // win bonus
+                    Main.reportScore();
+                    // PlayerPrefsX.
                     scoreSet = true;
                 }
                 g.text = "Dozer is finally happy :) ... Score: " + (Main.score).ToString();
@@ -74,7 +76,8 @@ public class TextEnlarger : MonoBehaviour
                 b.enabled = false;
                 g.fontSize = 80;
                 if (!scoreSet) {
-                    Main.score += ((150 - ((int)Time.time - lastEndTime)) / 160.0f) * 50.0f;
+                    Main.score += (int) (Mathf.Log((150 - ((int)Time.time - lastEndTime))) * 1000.0f);
+                    Main.reportScore();
                     scoreSet = true;
                 }
                 g.text = "You lose! Dozer is sad :( ... Score: " + Main.score.ToString();
