@@ -18,7 +18,6 @@ public class TransitionScript : MonoBehaviour {
         // blowup = GetComponent<Canvas>().GetComponent<Text>();
 
         // Game Logic
-        
         if (Main.status == "from-menu")
         {
             Main.status = "from-transition";
@@ -75,7 +74,8 @@ public class TransitionScript : MonoBehaviour {
 
         
         blowup.fontSize = 0;
-
+        print("Score: " + Main.score);
+        print("Next Scene: " + nextScene);
     }
 
     // Update is called once per frame

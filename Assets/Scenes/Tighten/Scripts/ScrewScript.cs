@@ -7,7 +7,7 @@ public class ScrewScript : MonoBehaviour {
     private string state = "left";
     private int point = 0;
 
-    private float gameTime = 10.0f;
+    private float gameTime = 5.0f;
 
     private bool left, up, right, down = false;
     // Use this for initialization
@@ -17,6 +17,11 @@ public class ScrewScript : MonoBehaviour {
     void win() {
         if (point == 16){
             state = null;
+            print("gameTime: " + gameTime);
+            print("Score from tighten: " + (((10.0f - gameTime) / gameTime) * 10.0f));
+            Main.addScore(gameTime, 10.0f);
+
+            // Main.score += ((10.0f - gameTime) / 10.0f) * 10.0f;
             Main.status = "win-mg";
             SceneManager.LoadScene("Transition");
         }
@@ -60,6 +65,6 @@ public class ScrewScript : MonoBehaviour {
             point += 1;
         }
         win();
-        print(point);
+        // print(point);
     }
 }

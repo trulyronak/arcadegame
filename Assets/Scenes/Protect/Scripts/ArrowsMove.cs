@@ -33,6 +33,10 @@ public class ArrowsMove : MonoBehaviour {
         }
         if (Input.GetKeyDown("space") || Input.GetButtonDown("Fire1")) {
             if (transform.position.x == randPost[GlassesMovement.randNum]) {
+                print("gameTime: " + gameTime);
+                print("Score from protect: " + (((6.0f - gameTime) / 6.0f) * 10.0f));
+                Main.addScore(gameTime, 6.0f);
+                // Main.score += ((6.0f - gameTime) / 6.0f) * 10.0f;
                 Main.status = "win-mg";
             } else {
                 Main.status = "lose-mg";

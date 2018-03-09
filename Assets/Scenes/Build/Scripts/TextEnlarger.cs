@@ -13,6 +13,7 @@ public class TextEnlarger : MonoBehaviour
     int startime, score = 0;
     bool finished = false;
     float endGameTime = 5.0f;
+    bool scoreSet = false;
     static int lastEndTime;
     void Start()
     {
@@ -44,8 +45,9 @@ public class TextEnlarger : MonoBehaviour
             SceneManager.LoadScene("Credits");
             // SceneManager.LoadScene("Main");
         }
-        if (!finished && g.fontSize < 100)
+        if (!finished && g.fontSize < 100) {
             g.fontSize++;
+        }   
         else
         {
             int gametime = (int)Time.time - startime;
@@ -57,20 +59,33 @@ public class TextEnlarger : MonoBehaviour
                 b.enabled = false;
                 g.fontSize = 80;
                 //int finalscore = 
-                g.text = "Dozer is finally happy :) ... Score: " + (score+20).ToString();
+                if (!scoreSet) {
+                    Main.score += ((150 - ((int)Time.time - lastEndTime)) / 160.0f) * 50.0f;
+                    Main.score += 20; // win bonus
+                    scoreSet = true;
+                }
+                g.text = "Dozer is finally happy :) ... Score: " + (Main.score).ToString();
                 Dance();
                 
             }
-            else if(gametime > 420)
+            else if(gametime > 30)
             {
                 finished = true;
                 b.enabled = false;
                 g.fontSize = 80;
-                g.text = "You lose! Dozer is sad :( ... Score: " + score.ToString();
+                if (!scoreSet) {
+                    Main.score += ((150 - ((int)Time.time - lastEndTime)) / 160.0f) * 50.0f;
+                    scoreSet = true;
+                }
+                g.text = "You lose! Dozer is sad :( ... Score: " + Main.score.ToString();
             }
             else
             {
-                score = 150 - ((int)Time.time - lastEndTime);
+                print("Time: " + Time.time);
+                print("Last End Time: " + lastEndTime);
+                print("Usual Score: " + (150 - ((int)Time.time - lastEndTime)));
+                // Main.score += ((150 - ((int)Time.time - lastEndTime)) / 160.0f) * 50.0f;//(((Time.time - lastEndTime) / 30.0f) * 10);
+                // score = 150 - ((int)Time.time - lastEndTime);
             }
             //print(score.ToString());
             /*if (gametime > 10)

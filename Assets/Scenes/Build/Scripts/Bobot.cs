@@ -50,7 +50,7 @@ public class Bobot : MonoBehaviour {
             if (down && y > -20)
                 sprites[selected].transform.Translate(0, -weight, 0);
 
-            Debug.Log(sprites[selected].transform.position.x+" "+ sprites[selected].transform.position.y);
+            // Debug.Log(sprites[selected].transform.position.x+" "+ sprites[selected].transform.position.y);
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))
             {

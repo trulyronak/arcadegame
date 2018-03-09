@@ -27,12 +27,15 @@ public class Climbing : MonoBehaviour {
 
         if (up && (Input.GetKeyUp("space") || Input.GetButtonDown("Fire1"))) {
             points += 1;
-            Debug.Log(points);
+            // Debug.Log(points);
             transform.Translate(new Vector3(0, num, 0));
         }
 
         if (points == 9) {
-            Debug.Log("jfakfghskdfhgjsddfghlw");
+            print("gameTime: " + gameTime);
+            print("Score from climb: " + (((10.0f - gameTime) / 10.0f) * 10.0f));
+            //Main.score += ((10.0f - gameTime) / 10.0f) * 10.0f;
+            Main.addScore(gameTime, 10.0f);
             Main.status = "win-mg";
             SceneManager.LoadScene("Transition");
 

@@ -8,8 +8,11 @@ public class Main : MonoBehaviour
     public static List<string> games = new List<string>();
     public static int gamesWon;
     public static bool arcadeCabinetMode = false;
+    public static float score = 0.00f;
+
     private void Start()
     {
+        score = 0.00f; // reset the score
         gamesWon = 0;
         status = "menu";
         games.Add("Protect");
@@ -58,5 +61,9 @@ public class Main : MonoBehaviour
         else {
             return Input.GetAxis(axisName);
         }
+    }
+
+    public static void addScore(float timeUsed, float timeAllotted) {
+        Main.score += ((timeAllotted - timeUsed) / timeAllotted) * 10.0f;
     }
 }

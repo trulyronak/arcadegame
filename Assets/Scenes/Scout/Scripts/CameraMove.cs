@@ -75,6 +75,12 @@ public class CameraMove : MonoBehaviour {
             }
             text.enabled = true;
             Main.status = (win) ? "win-mg" : "lose-mg";
+            if (win) {
+                print("gameTime: " + timer);
+                print("Score from scout: " + (((10.0f - timer) / 10.0f) * 10.0f));
+                Main.addScore(timer, 6.0f);
+                // Main.score += ((6.0f - timer) / 6.0f) * 10.0f;
+            }
             print(win);
             SceneManager.LoadScene("Transition");
         }
